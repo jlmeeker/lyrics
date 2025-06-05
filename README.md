@@ -7,4 +7,4 @@
 
 ## Collection
 
-All of the hymns are written to `./collection/<book>/songs`.  Each lyric file is then symlinked to `./collection/<book>/<section>` as a simple means of organization.
+All of the hymns are written to `./collection/<book>/songs/`.  Each lyric file is then symlinked to `./collection/<book>/<section>/` as a simple means of organization.
