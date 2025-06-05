@@ -9,6 +9,8 @@
 
 ```
 Usage of lyrics:
+  -books string
+    	hymn books to download (comma-delimited) (default "hymns-for-home-and-church,hymns,childrens-songbook")
   -collection string
     	path to the collection (will be created if missing) (default "collection")
 ```

@@ -10,11 +10,12 @@ import (
 )
 
 var flagCollectionsLocation = flag.String("collection", "collection", "path to the collection (will be created if missing)")
+var flagHymnBooks = flag.String("books", strings.Join(HymnBooks, ","), "hymn books to download (comma-delimited)")
 
 func main() {
 	flag.Parse()
 
-	for _, hymnBook := range HymnBooks {
+	for _, hymnBook := range strings.Split(*flagHymnBooks, ",") {
 		hymns, err := FetchHymns(hymnBook)
 		if err != nil {
 			log.Fatalf("failed to fetch hymns from %s: %s", hymnBook, err)
