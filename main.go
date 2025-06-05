@@ -2,13 +2,18 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
 	"regexp"
 	"strings"
 )
 
+var flagCollectionsLocation = flag.String("collection", "collection", "path to the collection (will be created if missing)")
+
 func main() {
+	flag.Parse()
+
 	for _, hymnBook := range HymnBooks {
 		hymns, err := FetchHymns(hymnBook)
 		if err != nil {

@@ -55,7 +55,7 @@ type HymnInfo struct {
 }
 
 func HymnExists(number, book, section, slug string) bool {
-	var destDir = filepath.Join("collection", book)
+	var destDir = filepath.Join(*flagCollectionsLocation, book)
 	var destSongDir = filepath.Join(destDir, "songs")
 	var lyricFileName = number + "-" + slug + ".txt"
 	var lyricFilePath = filepath.Join(destSongDir, lyricFileName)
@@ -111,7 +111,7 @@ func FetchHymn(slug string) (HymnInfo, error) {
 }
 
 func saveHymn(number, book, section, slug string, hymnInfo HymnInfo) error {
-	var destDir = filepath.Join("collection", book)
+	var destDir = filepath.Join(*flagCollectionsLocation, book)
 	var err error
 
 	// save lyric file (ignore if exists)
